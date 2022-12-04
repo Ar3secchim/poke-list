@@ -1,0 +1,11 @@
+
+.text-pentagon{
+  position: relative;
+  font-size: 0.4rem;
+  color: black;
+  z-index:10;
+}
+
+.pentagon{
+  width: 15%;
+}

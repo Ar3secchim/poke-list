@@ -1,0 +1,35 @@
+#card{
+  width: 16rem;
+  background: gray;
+
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.card-evolution{
+  position: relative;
+  left:-2rem;
+  top:-2rem;
+
+  display:flex;
+}
+
+.header-evolution{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: gray;
+  font-size: 0.8rem;
+}
+
+.card-stage{
+  display: flex;
+}
+
+.stage{
+  height:1.2rem;
+  padding: 0rem 0.5rem;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 1rem;
+}
