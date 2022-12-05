@@ -1,7 +1,5 @@
 #card{
   width: 16rem;
-  background: gray;
-
   margin-right: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -32,4 +30,103 @@
   border-radius: 0.5rem;
   background: white;
   font-size: 1rem;
+}
+.stage-details{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details{
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0rem 0rem 0rem;
+}
+
+#type-list{
+  height:1.2rem;
+  padding: 0rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin: 0rem 0.3rem 0.5rem 0rem;
+  filter: brightness(0.8)
+}
+
+#loadMore{
+  width: 30%;
+  padding: 0.4rem;
+  margin: 1rem;
+
+  background: #fff;
+  border-radius: 0.5rem;
+  border-style: none;
+  cursor: pointer;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+
+  color: #3D3D3D;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.img{
+  width: 40%;
+}
+.normal {
+  background: rgb(168,168,120);
+}
+.fire{
+  background:rgba(240,128,48);
+}
+.water{
+  background:rgb(104,144,240);
+}
+.grass{
+  background:rgba(120,200,80);
+}
+.electric{
+  background:rgb(248,208,48);
+}
+.ice{
+  background: rgb(152,216,216);
+}
+.ground{
+  background:rgb(224,192,104);
+}
+.flying{
+  background:rgb(168,144,240);
+}
+.poison{
+  background:rgb(160,64,160);
+}
+.fighting{
+  background:rgb(192,48,40);
+}
+.psychic{
+  background:rgb(248,88,136);
+}
+.dark{
+  background:rgb(112,88,72);
+}
+.rock{
+  background: rgb(184,160,56);
+}
+.bug{
+  background:rgb(168,184,32);
+}
+.ghost{
+  background: rgb(112,88,152);
+}
+.steel{
+  backfround:rgb(184,184,208);
+}
+.dragon{
+  backfround: rgb(112,56,248);
+}
+.fairy{
+  background:rgb(255,174,201);
 }

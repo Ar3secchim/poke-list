@@ -1,26 +1,33 @@
 import "./CardPokemon.css"
 import { Pentagon } from "./pentagon"
 
-export function CardPokemon({ Stage, Number, Name}) {
+export function CardPokemon({  TypeColor, Number, Stage, Life, Name, Type, SrcImage, Height, Weight }) {
+
   return (
     <>
-      <div id='card'>
+      <div id="card" className={TypeColor}>
         <div className="card-evolution">
           <div className="card-stage">
-            <Pentagon Color="white" Number={Number} />
-            <span className="stage">{Stage}</span>
+              <Pentagon Color="white" Number={Number} />
+              <div className="stage-details">
+                <span className="stage ">{Stage}</span>
+                <span className="stage">{Life} HP</span>
+              </div>
+
           </div>
         </div>
 
-        <h2>{Name}</h2>
 
-        <div>
-          <img src="" />
+        <div className="card-details">
           <div>
-            <span>Nª</span>
-            <span>Altura</span>
-            <span>Peso</span>
+            <h2>{Name}</h2>
+            <span>{Type}</span>
+            <div className="details">
+              <span>{Height}'</span>
+              <span>{Weight} lb</span>
+            </div>
           </div>
+          <img className="img" src={SrcImage} />
         </div>
 
       </div>
