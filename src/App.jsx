@@ -1,5 +1,5 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffec } from 'react'
 import { CardPokemon } from './components/CardPokemon'
 import { useFetch } from './hooks/UseFetch'
 
@@ -7,7 +7,7 @@ import { useFetch } from './hooks/UseFetch'
 function typesPokemons(typesPokemons) {
 
   for (var i = 0; typesPokemons.length > i; i++) {
-    typesPokemons= {
+    typesPokemons = {
       name: typesPokemons[i].type.name,
     }
   }
@@ -18,13 +18,12 @@ function typesPokemons(typesPokemons) {
 function typesPokemonsList(typesPokemons) {
 
   return (
-  typesPokemons.map((typeSlot) => <span id="type-list" className={typeSlot.type.name} >{typeSlot.type.name} </span>)
+    typesPokemons.map((typeSlot) => <span id="type-list" className={typeSlot.type.name} >{typeSlot.type.name} </span>)
   )
 }
 
-
 function App() {
-  const { pokemon, loading } = useFetch()
+  let { pokemon, loading } = useFetch()
 
   return (
     <main>
@@ -32,31 +31,35 @@ function App() {
         <h1> List Pokemon</h1>
       </header>
 
-      <section id='container-card'>
-        {loading && <div>Carregando...</div>}
-
-        {pokemon.map((pokemon) => {
-          return (
-            <CardPokemon key={pokemon.order}
-              TypeColor={typesPokemons(pokemon.types)}
-              Name={pokemon.name}
-              Number={pokemon.order}
-              Stage={pokemon.base_experience}
-              Life={pokemon.base_experience}
-              Type={typesPokemonsList(pokemon.types)}
-              SrcImage={pokemon.sprites.other.dream_world.front_default}
-              Weight={pokemon.weight}
-              Height={pokemon.height}
-            />
-          )
-        }
-        )}
+      <section>
+        <ol id='container-card'>
+          {loading && <div>Carregando...</div>}
+          {pokemon.map((pokemon) => {
+            return (
+              <CardPokemon key={pokemon.order}
+                TypeColor={typesPokemons(pokemon.types)}
+                Name={pokemon.name}
+                Number={pokemon.order}
+                Stage={pokemon.base_experience}
+                Life={pokemon.base_experience}
+                Type={typesPokemonsList(pokemon.types)}
+                SrcImage={pokemon.sprites.other.dream_world.front_default}
+                Weight={pokemon.weight}
+                Height={pokemon.height}
+              />
+            )
+          })}
+        </ol>
       </section>
 
-      <button id="loadMore" type='button'>
+      <div id='pagination'>
+        <button id="loadMore" type='button'>
           Load More...
-      </button>
-    </main>
+        </button>
+      </div>
+
+      <footer></footer>
+    </main >
   )
 }
 

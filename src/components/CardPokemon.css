@@ -1,3 +1,7 @@
+li{
+  list-style: none;
+}
+
 #card{
   width: 16rem;
   margin-right: 1rem;
@@ -57,21 +61,7 @@
   filter: brightness(0.8)
 }
 
-#loadMore{
-  width: 30%;
-  padding: 0.4rem;
-  margin: 1rem;
 
-  background: #fff;
-  border-radius: 0.5rem;
-  border-style: none;
-  cursor: pointer;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
-
-  color: #3D3D3D;
-  font-size: 1rem;
-  font-weight: 500;
-}
 
 .img{
   width: 40%;

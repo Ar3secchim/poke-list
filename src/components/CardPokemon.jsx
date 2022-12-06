@@ -1,17 +1,17 @@
 import "./CardPokemon.css"
 import { Pentagon } from "./pentagon"
 
-export function CardPokemon({  TypeColor, Number, Stage, Life, Name, Type, SrcImage, Height, Weight }) {
+export function CardPokemon({  TypeColor, Number, Life, Name, Type, SrcImage, Height, Weight }) {
 
   return (
     <>
-      <div id="card" className={TypeColor}>
+      <li id="card" className={TypeColor}>
         <div className="card-evolution">
           <div className="card-stage">
               <Pentagon Color="white" Number={Number} />
               <div className="stage-details">
-                <span className="stage ">{Stage}</span>
                 <span className="stage">{Life} HP</span>
+                {/* <span className="stage ">{Stage}</span> */}
               </div>
 
           </div>
@@ -30,7 +30,7 @@ export function CardPokemon({  TypeColor, Number, Stage, Life, Name, Type, SrcIm
           <img className="img" src={SrcImage} />
         </div>
 
-      </div>
+      </li>
     </>
   )
 }
