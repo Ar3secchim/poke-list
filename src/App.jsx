@@ -1,7 +1,9 @@
 import './App.css'
 import { useState, useEffec } from 'react'
-import { CardPokemon } from './components/CardPokemon'
 import { useFetch } from './hooks/UseFetch'
+
+import { CardPokemon } from './components/CardPokemon'
+import { Pagination } from './components/Pagination'
 
 //add className for CardPokemon for use in background color
 function typesPokemons(typesPokemons) {
@@ -23,23 +25,35 @@ function typesPokemonsList(typesPokemons) {
 }
 
 function App() {
-  let { pokemon, loading } = useFetch()
+  let { pokemon, loading, pages,
+    currentPokemons, setCurrentPage,
+    starOffset } = useFetch()
 
   return (
     <main>
       <header>
         <h1> List Pokemon</h1>
+        {/* <select >
+          <option value={0}>First Generation</option>
+          <option value={152}>Second Generation</option>
+          <option value={252}>Third Generation</option>
+          <option value={387}>Fourth Generation</option>
+          <option value={494}>Fifth Generation</option>
+          <option value={650}>Sixth Generation</option>
+          <option value={722}>Seventh Generation</option>
+          <option value={810}>Eighth Generation</option>
+        </select> */}
       </header>
 
       <section>
         <ol id='container-card'>
           {loading && <div>Carregando...</div>}
-          {pokemon.map((pokemon) => {
+          {currentPokemons.map((pokemon) => {
             return (
               <CardPokemon key={pokemon.order}
                 TypeColor={typesPokemons(pokemon.types)}
                 Name={pokemon.name}
-                Number={pokemon.order}
+                Number={pokemon.id}
                 Stage={pokemon.base_experience}
                 Life={pokemon.base_experience}
                 Type={typesPokemonsList(pokemon.types)}
@@ -52,11 +66,16 @@ function App() {
         </ol>
       </section>
 
-      <div id='pagination'>
+      {/* <div id='pagination'>
         <button id="loadMore" type='button'>
           Load More...
         </button>
-      </div>
+      </div> */}
+
+      <Pagination
+        Pages={pages}
+        setCurrentPage={setCurrentPage}
+      />
 
       <footer></footer>
     </main >

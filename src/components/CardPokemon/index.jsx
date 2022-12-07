@@ -1,5 +1,5 @@
-import "./CardPokemon.css"
-import { Pentagon } from "./pentagon"
+import "./cardPokemon.css"
+import { Pentagon } from "../Pentagon"
 
 export function CardPokemon({  TypeColor, Number, Life, Name, Type, SrcImage, Height, Weight }) {
 

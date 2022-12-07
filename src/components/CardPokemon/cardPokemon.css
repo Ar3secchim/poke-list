@@ -7,6 +7,8 @@ li{
   margin-right: 1rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  box-shadow:  8px 8px 17px #191919,
+             -8px -8px 17px #333333;
 }
 
 .card-evolution{
@@ -65,6 +67,7 @@ li{
 
 .img{
   width: 40%;
+
 }
 .normal {
   background: rgb(168,168,120);
@@ -112,10 +115,10 @@ li{
   background: rgb(112,88,152);
 }
 .steel{
-  backfround:rgb(184,184,208);
+  background:rgb(184,184,208);
 }
 .dragon{
-  backfround: rgb(112,56,248);
+  background: rgb(112,56,248);
 }
 .fairy{
   background:rgb(255,174,201);

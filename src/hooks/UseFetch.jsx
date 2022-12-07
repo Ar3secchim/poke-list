@@ -6,11 +6,23 @@ export function useFetch() {
   const [pokemon, setPokemons] = useState([])
   const [loading, setIsLoading] = useState(true)
 
-  var offset = 0
-  var limit = 12
+
+  const [itensPerPages, setItensPerPages] = useState(9)
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const pages = Math.ceil(pokemon.length / itensPerPages)
+
+  const startIndex = currentPage * itensPerPages
+  const endIndex = startIndex + itensPerPages
+  const currentPokemons = pokemon.slice(startIndex, endIndex)
+
+  const [offset, setOffset] = useState(0)
+  const [limit, setLimit] = useState(151)
+  const starOffset = offset - setOffset
+  const endLimit = limit
 
   useEffect(() => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`)
+    axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${starOffset}&limit=${endLimit}`)
       .then((response) => response.data)
       .then((data) => data.results)
       .then((pokemons) => pokemons.map((pokemons) => fetch(pokemons.url).then((response) => response.json())))
@@ -20,5 +32,9 @@ export function useFetch() {
   }, [])
 
 
-  return { pokemon, loading}
+  return {
+    pokemon, loading, pages,
+    currentPokemons, setCurrentPage,
+    starOffset
+  }
 }
