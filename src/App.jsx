@@ -26,8 +26,7 @@ function typesPokemonsList(typesPokemons) {
 
 function App() {
   let { pokemon, loading, pages,
-    currentPokemons, setCurrentPage,
-    starOffset } = useFetch()
+    currentPokemons, setCurrentPage } = useFetch()
 
   return (
     <main>
@@ -50,7 +49,8 @@ function App() {
           {loading && <div>Carregando...</div>}
           {currentPokemons.map((pokemon) => {
             return (
-              <CardPokemon key={pokemon.order}
+              <CardPokemon id= "card"
+                key={pokemon.order}
                 TypeColor={typesPokemons(pokemon.types)}
                 Name={pokemon.name}
                 Number={pokemon.id}
@@ -66,16 +66,11 @@ function App() {
         </ol>
       </section>
 
-      {/* <div id='pagination'>
-        <button id="loadMore" type='button'>
-          Load More...
-        </button>
-      </div> */}
+        <Pagination id='container-card'
+          Pages={pages}
+          setCurrentPage={setCurrentPage}
+        />
 
-      <Pagination
-        Pages={pages}
-        setCurrentPage={setCurrentPage}
-      />
 
       <footer></footer>
     </main >

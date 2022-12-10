@@ -1,8 +1,7 @@
 .container{
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 3rem auto;
 }
 
 #button{
@@ -19,7 +18,16 @@
   color: rgb(160,64,160);
 }
 
-#button:active{
+#button.active{
   backgroud:rgb(160,64,160);
   border-radius: 3px;
 }
+
+@media (min-width: 768px ) {
+  .container{
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem;
+    }
+  }
